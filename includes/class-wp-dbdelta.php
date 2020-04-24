@@ -18,7 +18,7 @@ class Db_Delta_Command extends WP_CLI_Command {
      * ## EXAMPLES
      *
      *     wp create $patch_id
-     *     wp create $patch_id --patch-dir=/home/tim/patches
+     *     wp create $patch_id --patch_dir=/home/tim/patches
      */    
     public function create($args, $assoc_args)
     {
@@ -169,8 +169,8 @@ class Db_Delta_Command extends WP_CLI_Command {
     
     private function _get_patch_dir($assoc_args)
     {
-        if(empty($this->patch-dir)) {
-            if(isset($assoc_args['patch-dir']) && !empty($assoc_args['patch-dir'])) {
+        if(empty($this->patch_dir)) {
+            if(isset($assoc_args['patch_dir']) && !empty($assoc_args['patch_dir'])) {
                 $this->_patch_dir = $assoc_args['patch_dir'];
             }
             elseif(defined('DB_DELTA_DIR')) {
